@@ -19,7 +19,7 @@
     "node": ">=4.0.0"
   },
   "dependencies": {
-    "epoll": "^2.0.4",
+    "epoll": "https://github.com/iammatthew2/epoll.git",
     "lodash.debounce": "^4.0.8"
   },
   "devDependencies": {
