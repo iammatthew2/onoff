@@ -2,7 +2,16 @@
 
 const fs = require('fs');
 const debounce = require('lodash.debounce');
-const Epoll = require('epoll').Epoll;
+const osType = require("os").type();
+let Epoll;
+
+if (osType == 'Linux') {
+  console.log('linux - everything is ok');
+  Epoll = require('epoll').Epoll;
+} else {
+  Epoll = function () {};
+  Epoll.EPOLLPRI = {};
+}
 
 const GPIO_ROOT_PATH = '/sys/class/gpio/';
 
